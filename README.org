@@ -1,0 +1,11 @@
+#+TITLE: Proyectos - Diseño y Análisis de Algoritmos
+#+author: Marco Antonio Cardoso Moreno
+
+* Información general
+- Asignatura :: Diseño y Análisis de Algoritmos
+- Docente :: Dr. Rolando Quintero Téllez
+- Maestría :: Maestría en Ciencias en Ingeniería de Cómputo
+- Alumno :: Marco Antonio Cardoso Moreno
+* Dependencias
+- Lenguaje :: Python
+  + Versión :: 3.6.7
