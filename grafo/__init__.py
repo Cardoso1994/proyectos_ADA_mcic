@@ -28,3 +28,21 @@ class Grafo(object):
         agrega objeto nodo al grafo
         """
         self.V[nodo.id] = nodo
+
+    def add_arista(self, arista):
+        """
+        Agrega arista al grafo si esta no existe de antemano en dicho grafo.
+        """
+        # u, v = arista.id
+        if self.get_arista(arista.id):
+            return False
+
+        self.E[arista.id] = arista
+        return True
+
+    def get_arista(self, arista_id):
+        if self.dirigido:
+            return arista_id in self.E
+        else:
+            u, v = arista_id
+            return (u, v) in self.E or (v, u) in self.E
