@@ -22,6 +22,7 @@ funciones para generar grafos con los siguientes modelos de generación:
 ** 30 nodos
 - m :: 6
 - n :: 5
+[[./img/30/grafoMalla_6_5.png]]
 
 ** 100 nodos
 - m :: 10
@@ -35,6 +36,7 @@ funciones para generar grafos con los siguientes modelos de generación:
 ** 30 nodos
 - n :: 30
 - m :: 150
+[[./img/30/grafoErdos_Renyi_30_150.png]]
 
 ** 100 nodos
 - n :: 100
@@ -48,6 +50,7 @@ funciones para generar grafos con los siguientes modelos de generación:
 ** 30 nodos
 - n :: 30
 - p :: 0.7
+[[./img/30/grafoGilbert_30_70.png]]
 
 ** 100 nodos
 - n :: 100
