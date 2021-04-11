@@ -14,19 +14,28 @@ class Grafo(object):
     Clase Grafo.
     Generación y manejo de Grafos
 
-    Parameters
+    Parametros
     ----------
     id : str
-        id o nombre del grafo
+        id o nombre del Grafo
     dirigido : bool
-        Numeric error code.
+        True si el Grafo es dirigido, de otro modo, False
 
-    Attributes
-    ----------
-    msg : str
-        Human readable string describing the exception.
+    Atributos
+    ---------
+    id : str
+        id o nombre del Grafo
     dirigido : bool
-        indica si el grafo es dirigido
+        True si el Grafo es dirigido, de otro modo, False
+    V : dict
+        Diccionario de Nodos o Vertices del Grafo.
+        key: Nodo.id
+        value: Nodo
+    E : dict
+        Diccionario de Aristas (edges) del Grafo
+        key: Arista.id
+        value: Arista
+
     """
     def __init__(self, id='grafo', dirigido=False):
         self.id = id
