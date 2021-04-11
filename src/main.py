@@ -23,7 +23,7 @@ from generador_grafos import grafoMalla, \
 
 
 def main():
-    path = "/home/cardoso/garbage/grafos/500/"
+    path = "/home/cardoso/garbage/"
 
     nodos = 500
     nodos_malla = (25, 20)

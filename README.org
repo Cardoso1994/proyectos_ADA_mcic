@@ -83,8 +83,8 @@ funciones para generar grafos con los siguientes modelos de generación:
 * Barabasi
 ** 30 nodos
 - n :: 30
-- d :: 5
-[[./img/30/grafoBarabasi_30_5.png]]
+- d :: 7
+[[./img/30/grafoBarabasi_30_7.png]]
 
 ** 100 nodos
 - n :: 100

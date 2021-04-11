@@ -213,13 +213,16 @@ def grafoBarabasiAlbert(n, d, dirigido=False, auto=False):
     # agregar aristas al azar, con cierta probabilidad
     for nodo in nodos:
         for v in nodos:
+            if nodos_deg[nodo] == d:
+                break
+            if nodos_deg[v] == d:
+                continue
             p = random.random()
             equal_nodes = v == nodo
             if equal_nodes and not auto:
                 continue
 
-            if nodos_deg[nodo] < d and nodos_deg[v] < d \
-               and p <= 1 - nodos_deg[v] / d \
+            if p <= 1 - nodos_deg[v] / d \
                and g.add_arista(Arista(nodos[nodo], nodos[v])):
                 nodos_deg[nodo] += 1
                 if not equal_nodes:
