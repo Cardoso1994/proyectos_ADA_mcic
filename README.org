@@ -50,6 +50,8 @@ funciones para generar grafos con los siguientes modelos de generación:
 ** 30 nodos
 - n :: 30
 - p :: 0.7
+#+NAME: img:malla_30
+#+ATTR_LATEX: :width 0.58\linewidth
 [[./img/30/grafoGilbert_30_70.png]]
 
 ** 100 nodos
