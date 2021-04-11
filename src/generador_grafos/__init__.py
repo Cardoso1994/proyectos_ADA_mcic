@@ -190,7 +190,6 @@ def grafoGeografico(n, r, dirigido=False, auto=False):
 
 def grafoBarabasiAlbert(n, d, dirigido=False, auto=False):
     """
-    d -> número de aristas de cada nodo
     Genera grafo aleatorio con el modelo Barabasi-Albert
     :param n: número de nodos (> 0)
     :param d: grado máximo esperado por cada nodo (> 1)
@@ -213,16 +212,17 @@ def grafoBarabasiAlbert(n, d, dirigido=False, auto=False):
 
     # agregar aristas al azar, con cierta probabilidad
     for nodo in nodos:
-        while nodos_deg[nodo] < d:
-            v = random.randrange(n)
+        for v in nodos:
             p = random.random()
             equal_nodes = v == nodo
-            if not auto and equal_nodes:
+            if equal_nodes and not auto:
                 continue
-            if nodos_deg[v] < d and p  > nodos_deg[v] / d \
-                and g.add_arista(Arista(nodos[nodo], nodos[v])):
-                    nodos_deg[nodo] += 1
-                    if not equal_nodes:
+
+            if nodos_deg[nodo] < d and nodos_deg[v] < d \
+               and p <= 1 - nodos_deg[v] / d \
+               and g.add_arista(Arista(nodos[nodo], nodos[v])):
+                nodos_deg[nodo] += 1
+                if not equal_nodes:
                         nodos_deg[v] += 1
 
     return g

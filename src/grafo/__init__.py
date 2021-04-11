@@ -38,12 +38,11 @@ class Grafo(object):
 
     """
     def __init__(self, id='grafo', dirigido=False):
-        self.id = id
+        self.id =       id
         self.dirigido = dirigido
-        self.V = dict()
-        self.E = dict()
-        self.attr = dict()
-
+        self.V =        dict()
+        self.E =        dict()
+        self.attr =     dict()
 
     def __repr__(self):
         """
@@ -88,7 +87,6 @@ class Grafo(object):
             True si se agrego la arista, de otro modo, False
 
         """
-        # u, v = arista.id
         if self.get_arista(arista.id):
             return False
 
