@@ -51,7 +51,7 @@ funciones para generar grafos con los siguientes modelos de generación:
 - n :: 30
 - p :: 0.7
 #+NAME: img:malla_30
-#+ATTR_HTML: :width 300 :style border:2px solid black;
+#+ATTR_HTML: :width 30 :style border:2px solid black;
 [[./img/30/grafoGilbert_30_70.png]]
 
 ** 100 nodos
