@@ -1,82 +1,90 @@
 #+TITLE: Proyectos - Diseño y Análisis de Algoritmos
 #+author: Marco Antonio Cardoso Moreno
 
+#+STARTUP:  CONTENT
+
 * Información general
 - Asignatura :: Diseño y Análisis de Algoritmos
 - Docente :: Dr. Rolando Quintero Téllez
 - Maestría :: Maestría en Ciencias en Ingeniería de Cómputo
 - Alumno :: Marco Antonio Cardoso Moreno
 
+* Especificaciones
+Escribir una biblioteca orientada a objetos, en Python 3.6, para describir y
+utilizar grafos. Debe, por lo menos contar con una clase llamada Grafo, una
+clase llamada Nodo y una clase llamada Arista. Asimismo, se deben realizar
+funciones para generar grafos con los siguientes modelos de generación:
+
 * Imágenes - Resultados
-** Malla
-*** 30 nodos
+* Malla
+** 30 nodos
 - m :: 6
 - n :: 5
 
-*** 100 nodos
+** 100 nodos
 - m :: 10
 - n :: 10
 
-*** 500 nodos
+** 500 nodos
 - m :: 25
 - n :: 20
 
-** Erdos Renyi
-*** 30 nodos
+* Erdos Renyi
+** 30 nodos
 - n :: 30
 - m :: 150
 
-*** 100 nodos
+** 100 nodos
 - n :: 100
 - m :: 550
 
-*** 500 nodos
+** 500 nodos
 - n :: 500
 - m :: 2550
 
-** Gilbert
-*** 30 nodos
+* Gilbert
+** 30 nodos
 - n :: 30
 - p :: 0.7
 
-*** 100 nodos
+** 100 nodos
 - n :: 100
 - p :: 0.4
 
-*** 500 nodos
+** 500 nodos
 - n :: 500
 - p :: 0.1
 
-** Geográfico
-*** 30 nodos
+* Geográfico
+** 30 nodos
 - n :: 30
 - r :: 0.7
 
-*** 100 nodos
+** 100 nodos
 - n :: 100
 - r :: 0.4
 
-*** 500 nodos
+** 500 nodos
 - n :: 500
 - r :: 0.1
 
-** Barabasi
-*** 30 nodos
+* Barabasi
+** 30 nodos
 - n :: 30
 - d :: 5
 
-*** 100 nodos
+** 100 nodos
 - n :: 100
 - d :: 7
 
-*** 500 nodos
+** 500 nodos
 - n :: 500
 - d :: 7
 
-** Dorogovtsev
-*** 30 nodos
-*** 100 nodos
-*** 500 nodos
+* Dorogovtsev
+** 30 nodos
+** 100 nodos
+** 500 nodos
 
 * Dependencias
 - Lenguaje :: Python
