@@ -2,7 +2,6 @@
 #+author: Marco Antonio Cardoso Moreno
 
 #+STARTUP:  CONTENT
-#+INFOJS_OPT: view:content toc:nil
 
 
 * Información general
@@ -27,10 +26,12 @@ funciones para generar grafos con los siguientes modelos de generación:
 ** 100 nodos
 - m :: 10
 - n :: 10
+[[./img/100/grafoMalla_10_10.png]]
 
 ** 500 nodos
 - m :: 25
 - n :: 20
+[[./img/500/grafoMalla_25_20.png]]
 
 * Erdos Renyi
 ** 30 nodos
@@ -41,57 +42,67 @@ funciones para generar grafos con los siguientes modelos de generación:
 ** 100 nodos
 - n :: 100
 - m :: 550
+[[./img/100/grafoErdos_Renyi_100_550.png]]
 
 ** 500 nodos
 - n :: 500
 - m :: 2550
+[[./img/500/grafoErdos_Renyi_500_2550.png]]
 
 * Gilbert
 ** 30 nodos
 - n :: 30
 - p :: 0.7
-#+NAME: img:malla_30
-#+ATTR_HTML: :width 30 :style border:2px solid black;
 [[./img/30/grafoGilbert_30_70.png]]
 
 ** 100 nodos
 - n :: 100
 - p :: 0.4
+[[./img/100/grafoGilbert_100_40.png]]
 
 ** 500 nodos
 - n :: 500
 - p :: 0.1
-
+[[./img/500/grafoGilbert_500_10.png]]
 * Geográfico
 ** 30 nodos
 - n :: 30
 - r :: 0.7
+[[./img/30/grafoGeografico_30_70.png]]
 
 ** 100 nodos
 - n :: 100
 - r :: 0.4
+[[./img/100/grafoGeografico_100_40.png]]
 
 ** 500 nodos
 - n :: 500
 - r :: 0.1
+[[./img/500/grafoGeografico_500_10.png]]
 
 * Barabasi
 ** 30 nodos
 - n :: 30
 - d :: 5
+[[./img/30/grafoBarabasi_30_5.png]]
 
 ** 100 nodos
 - n :: 100
 - d :: 7
+[[./img/100/grafoBarabasi_100_7.png]]
 
 ** 500 nodos
 - n :: 500
 - d :: 7
+[[./img/500/grafoBarabasi_500_7.png]]
 
 * Dorogovtsev
 ** 30 nodos
+[[./img/30/grafoDorogovtsev_30.png]]
 ** 100 nodos
+[[./img/100/grafoDorogovtsev_100.png]]
 ** 500 nodos
+[[./img/500/grafoDorogovtsev_500.png]]
 
 * Dependencias
 - Lenguaje :: Python
