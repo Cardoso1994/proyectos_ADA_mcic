@@ -23,23 +23,32 @@ from generador_grafos import grafoMalla, \
 
 
 def main():
-    path = "/home/cardoso/garbage/"
-    g = grafoMalla(20, 25)
+    path = "/home/cardoso/garbage/grafos/500/"
+
+    nodos = 500
+    nodos_malla = (25, 20)
+
+    m_erdos = 2550
+    p_gilbert = 0.1
+    r_geografico = 0.1
+    d_barabasi = 7
+
+    g = grafoMalla(*nodos_malla)
     g.to_graphviz(path + g.id + ".gv")
 
-    g = grafoErdosRenyi(500, 800)
+    g = grafoErdosRenyi(nodos, m_erdos)
     g.to_graphviz(path + g.id + ".gv")
 
-    g = grafoGilbert(500, 0.15, dirigido=False, auto=True)
+    g = grafoGilbert(nodos, p_gilbert, dirigido=False, auto=False)
     g.to_graphviz(path + g.id + ".gv")
 
-    g = grafoGeografico(500, 0.1)
+    g = grafoGeografico(nodos, r_geografico)
     g.to_graphviz(path + g.id + ".gv")
 
-    g = grafoBarabasiAlbert(500, 2, auto=False)
+    g = grafoBarabasiAlbert(nodos, d_barabasi, auto=False)
     g.to_graphviz(path + g.id + ".gv")
 
-    g = grafoDorogovtsevMendes(500, dirigido=False)
+    g = grafoDorogovtsevMendes(nodos, dirigido=False)
     g.to_graphviz(path + g.id + ".gv")
 
 if __name__ == "__main__":
