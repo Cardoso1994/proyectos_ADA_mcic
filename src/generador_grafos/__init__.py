@@ -90,7 +90,7 @@ def grafoErdosRenyi(n, m, dirigido=False, auto=False):
         print("Error: n > 0 y m >= n - 1", file=sys.stderr)
         exit(-1)
 
-    g = Grafo(id=f"grafo_Erdos_Renyi_{n}_{m}")
+    g = Grafo(id=f"grafoErdos_Renyi_{n}_{m}")
     nodos = g.V
 
     # crear nodos
