@@ -36,7 +36,7 @@ def main():
     g = grafoGeografico(500, 0.1)
     g.to_graphviz(path + g.id + ".gv")
 
-    g = grafoBarabasiAlbert(500, 7, auto=False)
+    g = grafoBarabasiAlbert(500, 2, auto=False)
     g.to_graphviz(path + g.id + ".gv")
 
     g = grafoDorogovtsevMendes(500, dirigido=False)
