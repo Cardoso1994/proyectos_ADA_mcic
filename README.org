@@ -2,6 +2,8 @@
 #+author: Marco Antonio Cardoso Moreno
 
 #+STARTUP:  CONTENT
+#+INFOJS_OPT: view:content toc:nil
+
 
 * Información general
 - Asignatura :: Diseño y Análisis de Algoritmos
