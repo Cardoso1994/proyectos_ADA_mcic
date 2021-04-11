@@ -1,7 +1,3 @@
-
-# Table of Contents
-
-
 # Información general
 
 -   **Asignatura:** Diseño y Análisis de Algoritmos
@@ -33,7 +29,7 @@ funciones para generar grafos con los siguientes modelos de generación:
 -   **m:** 6
 -   **n:** 5
 
-![img](./img/30/grafoMalla_6_5.png)
+![img](./img/30/grafoMalla_6_5.png=350x)
 
 
 
