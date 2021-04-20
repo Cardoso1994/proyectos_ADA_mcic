@@ -9,6 +9,9 @@
 #
 ################################################################################
 
+import sys
+from arista import Arista
+
 class Grafo(object):
     """
     Clase Grafo.
@@ -139,3 +142,54 @@ class Grafo(object):
             for arista in self.E.values():
                 f.write(f"{arista.u} {edge_connector} {arista.v};\n")
             f.write("}")
+
+    def BFS(self, s):
+        """
+        Crea un nuevo grafo de tipo árbol mediante el algoritmo "breadth first
+            search"
+
+        Parametros
+        ----------
+        s : Nodo
+            nodo raíz del árbol que se va a generar
+
+        Returns
+        -------
+        bfs : Grafo
+            árbol generado
+        """
+        if not s.id in self.V:
+            print("Error, node not in V", file=sys.stderr)
+            exit(-1)
+
+        bfs = Grafo(id=f"BFS_{self.id}", dirigido=False)
+        discovered = set()
+        bfs.add_nodo(s)
+        L0 = [s]
+        discovered = set()
+        added = [s.id]
+
+        while True:
+            L1 = []
+            for node in L0:
+                aristas = [ids_arista for ids_arista in self.E
+                            if node.id in ids_arista]
+
+                for arista in aristas:
+                    v = arista[1] if node.id == arista[0] else arista[0]
+
+                    if v in discovered:
+                        continue
+
+                    bfs.add_nodo(self.V[v])
+                    bfs.add_arista(self.E[arista])
+                    discovered.add(v)
+                    L1.append(self.V[v])
+
+            L0 = L1
+            if not L0:
+                break
+
+        print(self.V)
+        print(bfs.V)
+        return bfs
