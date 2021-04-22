@@ -162,7 +162,7 @@ class Grafo(object):
             print("Error, node not in V", file=sys.stderr)
             exit(-1)
 
-        bfs = Grafo(id=f"BFS_{self.id}", dirigido=False)
+        bfs = Grafo(id=f"BFS_{self.id}", dirigido=self.dirigido)
         discovered = set()
         bfs.add_nodo(s)
         L0 = [s]
@@ -190,6 +190,86 @@ class Grafo(object):
             if not L0:
                 break
 
-        print(self.V)
-        print(bfs.V)
         return bfs
+
+    def DFS_R(self, u):
+        """
+        Crea un nuevo grafo de tipo árbol mediante el algoritmo "depth first
+            search".
+        Usa una función recursiva
+
+        Parametros
+        ----------
+        u : Nodo
+            nodo raíz del árbol que se va a generar
+
+        Returns
+        -------
+        dfs : Grafo
+            árbol generado
+        """
+        dfs = Grafo(id=f"DFS_R_{self.id}", dirigido=self.dirigido)
+        discovered = set()
+        self.DFS_rec(u, dfs, discovered)
+
+        return dfs
+
+    def DFS_rec(self, u, dfs, discovered):
+        """
+        Función recursiva para agregar nodos y aristas al árbol DFS
+
+        Parametros
+        ----------
+        u : Nodo
+            nodo actual, en el que se continúa la búsqueda a lo profundo
+        dfs : Grafo
+            Grafo que contendrá al árbol de búsquedo a lo produndo.
+        discovered : set
+            nodos que ya han sido descubiertos
+
+        Returns
+        -------
+        None
+        """
+        dfs.add_nodo(u)
+        discovered.add(u.id)
+        aristas = (arista for arista in self.E if u.id in arista)
+
+        for arista in aristas:
+            v = arista[1]
+            if not self.dirigido:
+                v = arista[0] if u.id == arista[1] else arista[1]
+            if v in discovered:
+                continue
+            dfs.add_arista(self.E[arista])
+            self.DFS_rec(self.V[v], dfs, discovered)
+
+    def DFS_I(self, s):
+        dfs = Grafo(id=f"DFS_I_{self.id}", dirigido=self.dirigido)
+        discovered = {s.id}
+        dfs.add_nodo(s)
+        u = s.id
+        frontera = []
+        while True:
+            # añadir a frontera todos los nodos con arista a u
+            aristas = (arista for arista in self.E if u in arista)
+            for arista in aristas:
+                v = arista[1] if u == arista[0] else arista[0]
+                if v not in discovered:
+                    frontera.append((u, v))
+
+            # si la frontera está vacía, salir del loop
+            if not frontera:
+                break
+
+            # sacar nodo de la frontera
+            parent, child = frontera.pop()
+            if child not in discovered:
+                dfs.add_nodo(self.V[child])
+                arista = Arista(self.V[parent], self.V[child])
+                dfs.add_arista(arista)
+                discovered.add(child)
+
+            u = child
+
+        return dfs
