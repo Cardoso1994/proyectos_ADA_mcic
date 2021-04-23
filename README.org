@@ -38,7 +38,14 @@ funciones para generar grafos con los siguientes modelos de generación:
 ** 100 nodos
 - m :: 10
 - n :: 10
-[[./img/100/grafoMalla_10_10.png]]
+*** Grafo generado
+[[./img/100/malla/grafoMalla_10_10.png]]
+*** BFS
+[[./img/100/malla/BFS_grafoMalla_10_10.png]]
+*** DFS_R
+[[./img/100/malla/DFS_R_grafoMalla_10_10.png]]
+*** DFS_I
+[[./img/100/malla/DFS_I_grafoMalla_10_10.png]]
 
 ** 500 nodos
 - m :: 25
@@ -59,8 +66,15 @@ funciones para generar grafos con los siguientes modelos de generación:
 [[./img/30/erdos/DFS_I_grafoErdos_Renyi_30_80.png]]
 ** 100 nodos
 - n :: 100
-- m :: 550
-[[./img/100/grafoErdos_Renyi_100_550.png]]
+- m :: 280
+*** Grafo generado
+[[./img/100/erdos/grafoErdos_Renyi_100_280.png]]
+*** BFS
+[[./img/100/erdos/BFS_grafoErdos_Renyi_100_280.png]]
+*** DFS_R
+[[./img/100/erdos/DFS_R_grafoErdos_Renyi_100_280.png]]
+*** DFS_I
+[[./img/100/erdos/DFS_I_grafoErdos_Renyi_100_280.png]]
 
 ** 500 nodos
 - n :: 500
@@ -82,8 +96,15 @@ funciones para generar grafos con los siguientes modelos de generación:
 [[./img/30/gilbert/DFS_I_grafoGilbert_30_10.png]]
 ** 100 nodos
 - n :: 100
-- p :: 0.4
-[[./img/100/grafoGilbert_100_40.png]]
+- p :: 0.3
+*** Grafo generado
+[[./img/100/gilbert/grafoGilbert_100_30.png]]
+*** BFS
+[[./img/100/gilbert/BFS_grafoGilbert_100_30.png]]
+*** DFS_R
+[[./img/100/gilbert/DFS_R_grafoGilbert_100_30.png]]
+*** DFS_I
+[[./img/100/gilbert/DFS_I_grafoGilbert_100_30.png]]
 
 ** 500 nodos
 - n :: 500
@@ -103,8 +124,15 @@ funciones para generar grafos con los siguientes modelos de generación:
 [[./img/30/geo/DFS_I_grafoGeografico_30_30.png]]
 ** 100 nodos
 - n :: 100
-- r :: 0.4
-[[./img/100/grafoGeografico_100_40.png]]
+- r :: 0.3
+*** Grafo generado
+[[./img/100/geo/grafoGeografico_100_30.png]]
+*** BFS
+[[./img/100/geo/BFS_grafoGeografico_100_30.png]]
+*** DFS_R
+[[./img/100/geo/DFS_R_grafoGeografico_100_30.png]]
+*** DFS_I
+[[./img/100/geo/DFS_I_grafoGeografico_100_30.png]]
 
 ** 500 nodos
 - n :: 500
@@ -125,8 +153,15 @@ funciones para generar grafos con los siguientes modelos de generación:
 [[./img/30/barabasi/DFS_I_grafoBarabasi_30_4.png]]
 ** 100 nodos
 - n :: 100
-- d :: 7
-[[./img/100/grafoBarabasi_100_7.png]]
+- d :: 6
+*** Grafo generado
+[[./img/100/barabasi/grafoBarabasi_100_6.png]]
+*** BFS
+[[./img/100/barabasi/BFS_grafoBarabasi_100_6.png]]
+*** DFS_R
+[[./img/100/barabasi/DFS_R_grafoBarabasi_100_6.png]]
+*** DFS_I
+[[./img/100/barabasi/DFS_I_grafoBarabasi_100_6.png]]
 
 ** 500 nodos
 - n :: 500
@@ -144,7 +179,14 @@ funciones para generar grafos con los siguientes modelos de generación:
 *** DFS_I
 [[./img/30/dorog/DFS_I_grafoDorogovtsev_30.png]]
 ** 100 nodos
-[[./img/100/grafoDorogovtsev_100.png]]
+*** Grafo generado
+[[./img/100/dorog/grafoDorogovtsev_100.png]]
+*** BFS
+[[./img/100/dorog/BFS_grafoDorogovtsev_100.png]]
+*** DFS_R
+[[./img/100/dorog/DFS_R_grafoDorogovtsev_100.png]]
+*** DFS_I
+[[./img/100/dorog/DFS_I_grafoDorogovtsev_100.png]]
 ** 500 nodos
 [[./img/500/grafoDorogovtsev_500.png]]
 
