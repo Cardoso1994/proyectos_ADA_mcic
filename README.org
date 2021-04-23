@@ -11,6 +11,7 @@
 - Alumno :: Marco Antonio Cardoso Moreno
 
 * Especificaciones
+** Proyecto 01
 Escribir una biblioteca orientada a objetos, en Python 3.6, para describir y
 utilizar grafos. Debe, por lo menos contar con una clase llamada Grafo, una
 clase llamada Nodo y una clase llamada Arista. Asimismo, se deben realizar
@@ -21,6 +22,15 @@ funciones para generar grafos con los siguientes modelos de generación:
 - Geográfico
 - Barabási-Albert
 - Dorogovtsev-Mendes
+
+** Proyecto 02
+Utilizando la biblioteca de grafos desarrollada en el proyecto 1, implementar
+los algoritmos BFS y DFS (recursivo e iterativo) de tal forma que dado un nodo
+fuente (s), calculen el árbol inducido por los algoritmos mencionados; es decir,
+desarrollar los métodos en la clase Grafo:
+- =def BFS(self, s)=
+- =def DFS_R(self, s)=
+- =def DFS_I(self, s)=
 
 * Imágenes - Resultados
 * Malla
