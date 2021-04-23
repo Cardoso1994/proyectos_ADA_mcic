@@ -60,7 +60,14 @@ desarrollar los métodos en la clase Grafo:
 ** 500 nodos
 - m :: 25
 - n :: 20
-[[./img/500/grafoMalla_25_20.png]]
+*** Gafo generado
+[[./img/500/malla/grafoMalla_25_20.png]]
+*** BFS
+[[./img/500/malla/BFS_grafoMalla_25_20.png]]
+*** DFS_R
+[[./img/500/malla/DFS_R_grafoMalla_25_20.png]]
+*** DFS_I
+[[./img/500/malla/DFS_I_grafoMalla_25_20.png]]
 
 * Erdos Renyi
 ** 30 nodos
@@ -88,8 +95,15 @@ desarrollar los métodos en la clase Grafo:
 
 ** 500 nodos
 - n :: 500
-- m :: 2550
-[[./img/500/grafoErdos_Renyi_500_2550.png]]
+- m :: 2000
+*** Grafo generado
+[[./img/500/erdos/grafoErdos_Renyi_500_2000.png]]
+*** BFS
+[[./img/500/erdos/BFS_grafoErdos_Renyi_500_2000.png]]
+*** DFS_R
+[[./img/500/erdos/DFS_R_grafoErdos_Renyi_500_2000.png]]
+*** DFS_I
+[[./img/500/erdos/DFS_I_grafoErdos_Renyi_500_2000.png]]
 
 * Gilbert
 ** 30 nodos
@@ -118,8 +132,15 @@ desarrollar los métodos en la clase Grafo:
 
 ** 500 nodos
 - n :: 500
-- p :: 0.1
-[[./img/500/grafoGilbert_500_10.png]]
+- p :: 0.2
+*** Grafo generado
+[[./img/500/gilbert/grafoGilbert_500_20.png]]
+*** BFS
+[[./img/500/gilbert/BFS_grafoGilbert_500_20.png]]
+*** DFS_R
+[[./img/500/gilbert/DFS_R_grafoGilbert_500_20.png]]
+*** DFS_I
+[[./img/500/gilbert/DFS_I_grafoGilbert_500_20.png]]
 * Geográfico
 ** 30 nodos
 - n :: 30
@@ -146,8 +167,15 @@ desarrollar los métodos en la clase Grafo:
 
 ** 500 nodos
 - n :: 500
-- r :: 0.1
-[[./img/500/grafoGeografico_500_10.png]]
+- r :: 0.2
+*** Grafo generado
+[[./img/500/geo/grafoGeografico_500_20.png]]
+*** BFS
+[[./img/500/geo/BFS_grafoGeografico_500_20.png]]
+*** DFS_R
+[[./img/500/geo/DFS_R_grafoGeografico_500_20.png]]
+*** DFS_I
+[[./img/500/geo/DFS_I_grafoGeografico_500_20.png]]
 
 * Barabasi
 ** 30 nodos
@@ -176,7 +204,14 @@ desarrollar los métodos en la clase Grafo:
 ** 500 nodos
 - n :: 500
 - d :: 7
-[[./img/500/grafoBarabasi_500_7.png]]
+*** Grafo generado
+[[./img/500/barabasi/grafoBarabasi_500_7.png]]
+*** BFS
+[[./img/500/barabasi/BFS_grafoBarabasi_500_7.png]]
+*** DFS
+[[./img/500/barabasi/DFS_R_grafoBarabasi_500_7.png]]
+*** DFS
+[[./img/500/barabasi/DFS_I_grafoBarabasi_500_7.png]]
 
 * Dorogovtsev
 ** 30 nodos
@@ -198,7 +233,14 @@ desarrollar los métodos en la clase Grafo:
 *** DFS_I
 [[./img/100/dorog/DFS_I_grafoDorogovtsev_100.png]]
 ** 500 nodos
-[[./img/500/grafoDorogovtsev_500.png]]
+*** Grafo generado
+[[./img/500/dorog/grafoDorogovtsev_500.png]]
+*** BFS
+[[./img/500/dorog/BFS_grafoDorogovtsev_500.png]]
+*** DFS_R
+[[./img/500/dorog/DFS_R_grafoDorogovtsev_500.png]]
+*** DFS_I
+[[./img/500/dorog/DFS_I_grafoDorogovtsev_500.png]]
 
 * Dependencias
 - Lenguaje :: Python
