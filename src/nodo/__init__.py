@@ -26,6 +26,7 @@ class Nodo(object):
     """
     def __init__(self, id):
         self.id = id
+        self.attrs = dict()
 
     def __eq__(self, other):
         """
@@ -42,6 +43,18 @@ class Nodo(object):
             True si los Nodos son iguales, False de otro modo.
         """
         return self.id == other.id
+
+    def __lt__(self, other):
+        """
+        Checks if self.id is less than other.id
+        """
+        return self.id < other.id
+
+    def __lt__(self, other):
+        """
+        Checks if self.id is greater than other.id
+        """
+        return self.id > other.id
 
     def __repr__(self):
         """

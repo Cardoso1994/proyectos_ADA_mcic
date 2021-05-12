@@ -34,11 +34,11 @@ class Arista(object):
     attrs : dict
         diccionario de atributos de la Arista
     """
-    def __init__(self, u, v, attrs=None):
+    def __init__(self, u, v):
         self.u = u
         self.v = v
         self.id = (u.id, v.id)
-        self.attrs = attrs
+        self.attrs = dict()
 
     def __eq__(self, other):
         """
@@ -66,3 +66,6 @@ class Arista(object):
             representación en str de los Nodos
         """
         return repr(self.id)
+
+    def add_weight(self, weight):
+        self.attrs['weight'] = weight

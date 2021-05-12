@@ -9,8 +9,15 @@
 #
 ################################################################################
 
+
+import random
 import sys
+
+import heapdict
+import numpy as np
+
 from arista import Arista
+from nodo import Nodo
 
 class Grafo(object):
     """
@@ -47,6 +54,7 @@ class Grafo(object):
         self.E =        dict()
         self.attr =     dict()
 
+
     def __repr__(self):
         """
         Asigna representación repr a los Grafos
@@ -59,6 +67,7 @@ class Grafo(object):
         return str("id: " + str(self.id) + '\n'
                    + 'nodos: ' + str(self.V.values()) + '\n'
                    + 'aristas: ' + str(self.E.values()))
+
 
     def add_nodo(self, nodo):
         """
@@ -74,6 +83,7 @@ class Grafo(object):
         None
         """
         self.V[nodo.id] = nodo
+
 
     def add_arista(self, arista):
         """
@@ -96,6 +106,7 @@ class Grafo(object):
         self.E[arista.id] = arista
         return True
 
+
     def get_arista(self, arista_id):
         """
         Revisa si la arista ya existe en el grafo
@@ -115,6 +126,15 @@ class Grafo(object):
         else:
             u, v = arista_id
             return (u, v) in self.E or (v, u) in self.E
+
+
+    def random_weights(self):
+        """
+        Asigna un peso random a todas las aristas del nodo
+        """
+        for arista in self.E.values():
+            arista.attrs['weight'] = random.randint(1, 100)
+
 
     def to_graphviz(self, filename):
         """
@@ -138,10 +158,23 @@ class Grafo(object):
         with open(filename, 'w') as f:
             f.write(f"{graph_directive} {self.id} " + " {\n")
             for nodo in self.V:
-                f.write(f"{nodo};\n")
+                if "Dijkstra" in self.id:
+                    f.write(f"\"{nodo} ({self.V[nodo].attrs['dist']})\";\n")
+                else:
+                    f.write(f"{nodo};\n")
             for arista in self.E.values():
-                f.write(f"{arista.u} {edge_connector} {arista.v};\n")
+                if "Dijkstra" in self.id:
+                    weight = np.abs(self.V[arista.u.id].attrs['dist']
+                                    - self.V[arista.v.id].attrs['dist'])
+                    f.write(f"\"{arista.u} ({self.V[arista.u.id].attrs['dist']})\""
+                            + f" {edge_connector} "
+                            + f"\"{arista.v} ({self.V[arista.v.id].attrs['dist']})\""
+                            # + f" [weight={weight}];\n")
+                            + f";\n")
+                else:
+                    f.write(f"{arista.u} {edge_connector} {arista.v};\n")
             f.write("}")
+
 
     def BFS(self, s):
         """
@@ -192,6 +225,7 @@ class Grafo(object):
 
         return bfs
 
+
     def DFS_R(self, u):
         """
         Crea un nuevo grafo de tipo árbol mediante el algoritmo "depth first
@@ -214,6 +248,7 @@ class Grafo(object):
 
         return dfs
 
+
     def DFS_rec(self, u, dfs, discovered):
         """
         Función recursiva para agregar nodos y aristas al árbol DFS
@@ -229,7 +264,8 @@ class Grafo(object):
 
         Returns
         -------
-        None
+        dfs: Grafo
+            arbol generado
         """
         dfs.add_nodo(u)
         discovered.add(u.id)
@@ -244,7 +280,23 @@ class Grafo(object):
             dfs.add_arista(self.E[arista])
             self.DFS_rec(self.V[v], dfs, discovered)
 
+
     def DFS_I(self, s):
+        """
+        Crea un nuevo grafo de tipo árbol mediante el algoritmo "depth first
+            search".
+        Metodo iterativo
+
+        Parametros
+        ----------
+        s : Nodo
+            nodo raíz del árbol que se va a generar
+
+        Returns
+        -------
+        dfs : Grafo
+            árbol generado
+        """
         dfs = Grafo(id=f"DFS_I_{self.id}", dirigido=self.dirigido)
         discovered = {s.id}
         dfs.add_nodo(s)
@@ -273,3 +325,62 @@ class Grafo(object):
             u = child
 
         return dfs
+
+
+    def Dijkstra(self, s):
+        """
+        Crea un nuevo grafo de tipo árbol mediante el algoritmo de Dijkstra,
+        que encuentra el grafo del camino más corto entre nodos
+        Usa una función recursiva
+
+        Parametros
+        ----------
+        s : Nodo
+            nodo raíz del árbol que se va a generar
+
+        Returns
+        -------
+        tree : Grafo
+            árbol generado
+        """
+        tree = Grafo(id=f"{self.id}_Dijkstra")
+        line = heapdict.heapdict()
+        parents = dict()
+        in_tree = set()
+
+
+        line[s] = 0
+        parents[s] = None
+        for node in self.V:
+            if node == s:
+                continue
+            line[node] = np.inf
+            parents[node] = None
+
+        while line:
+            u, u_dist = line.popitem()
+            if u_dist == np.inf:
+                continue
+
+            self.V[u].attrs['dist'] = u_dist
+            tree.add_nodo(self.V[u])
+            if parents[u] is not None:
+                arista = Arista(self.V[parents[u]], self.V[u])
+                tree.add_arista(arista)
+            in_tree.add(u)
+
+            # get neighbor nodes
+            neigh = []
+            for arista in self.E:
+                if self.V[u].id in arista:
+                    v = arista[0] if self.V[u].id == arista[1] else arista[1]
+                    if v not in in_tree:
+                        neigh.append(v)
+
+            for v in neigh:
+                arista = (u, v) if (u, v) in self.E else (v, u)
+                if line[v] > u_dist + self.E[arista].attrs['weight']:
+                    line[v] = u_dist + self.E[arista].attrs['weight']
+                    parents[v] = u
+
+        return tree
