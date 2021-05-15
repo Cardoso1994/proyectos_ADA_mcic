@@ -24,12 +24,12 @@ from generador_grafos import grafoMalla, \
 
 
 def main():
-    path = "/home/cardoso/garbage/grafos/"
+    path = "/home/cardoso/garbage/grafos/500/"
 
-    nodos = 300
-    nodos_malla = (25, 12)
+    nodos = 500
+    nodos_malla = (25, 20)
 
-    m_erdos = 850
+    m_erdos = 2000
     p_gilbert = 0.2
     r_geografico = 0.2
     d_barabasi = 5
@@ -37,12 +37,6 @@ def main():
     print("\nMalla")
     g = grafoMalla(*nodos_malla)
     g.to_graphviz(path + g.id + ".gv")
-    # bfs = g.BFS(Nodo(0))
-    # bfs.to_graphviz(path + bfs.id + ".gv")
-    # dfs = g.DFS_R(Nodo(0))
-    # dfs.to_graphviz(path + dfs.id + ".gv")
-    # dfs_i = g.DFS_I(Nodo(0))
-    # dfs_i.to_graphviz(path + dfs_i.id + ".gv")
     g.random_weights()
     dijkstra = g.Dijkstra(0)
     dijkstra.to_graphviz(path + dijkstra.id + ".gv")
@@ -52,12 +46,6 @@ def main():
     print("\nErdos")
     g = grafoErdosRenyi(nodos, m_erdos)
     g.to_graphviz(path + g.id + ".gv")
-    # bfs = g.BFS(Nodo(0))
-    # bfs.to_graphviz(path + bfs.id + ".gv")
-    # dfs = g.DFS_R(Nodo(0))
-    # dfs.to_graphviz(path + dfs.id + ".gv")
-    # dfs_i = g.DFS_I(Nodo(0))
-    # dfs_i.to_graphviz(path + dfs_i.id + ".gv")
     g.random_weights()
     dijkstra = g.Dijkstra(5)
     dijkstra.to_graphviz(path + dijkstra.id + ".gv")
@@ -67,12 +55,6 @@ def main():
     print("\nGilbert")
     g = grafoGilbert(nodos, p_gilbert, dirigido=False, auto=False)
     g.to_graphviz(path + g.id + ".gv")
-    # bfs = g.BFS(Nodo(0))
-    # bfs.to_graphviz(path + bfs.id + ".gv")
-    # dfs = g.DFS_R(Nodo(0))
-    # dfs.to_graphviz(path + dfs.id + ".gv")
-    # dfs_i = g.DFS_I(Nodo(0))
-    # dfs_i.to_graphviz(path + dfs_i.id + ".gv")
     g.random_weights()
     dijkstra = g.Dijkstra(5)
     dijkstra.to_graphviz(path + dijkstra.id + ".gv")
@@ -82,12 +64,6 @@ def main():
     print("\nGeo")
     g = grafoGeografico(nodos, r_geografico)
     g.to_graphviz(path + g.id + ".gv")
-    # bfs = g.BFS(Nodo(0))
-    # bfs.to_graphviz(path + bfs.id + ".gv")
-    # dfs = g.DFS_R(Nodo(0))
-    # dfs.to_graphviz(path + dfs.id + ".gv")
-    # dfs_i = g.DFS_I(Nodo(0))
-    # dfs_i.to_graphviz(path + dfs_i.id + ".gv")
     g.random_weights()
     dijkstra = g.Dijkstra(5)
     dijkstra.to_graphviz(path + dijkstra.id + ".gv")
@@ -97,12 +73,6 @@ def main():
     print("\nBarabasi")
     g = grafoBarabasiAlbert(nodos, d_barabasi, auto=False)
     g.to_graphviz(path + g.id + ".gv")
-    # bfs = g.BFS(Nodo(0))
-    # bfs.to_graphviz(path + bfs.id + ".gv")
-    # dfs = g.DFS_R(Nodo(0))
-    # dfs.to_graphviz(path + dfs.id + ".gv")
-    # dfs_i = g.DFS_I(Nodo(0))
-    # dfs_i.to_graphviz(path + dfs_i.id + ".gv")
     g.random_weights()
     dijkstra = g.Dijkstra(5)
     dijkstra.to_graphviz(path + dijkstra.id + ".gv")
@@ -112,12 +82,6 @@ def main():
     print("\nDorog")
     g = grafoDorogovtsevMendes(nodos, dirigido=False)
     g.to_graphviz(path + g.id + ".gv")
-    # bfs = g.BFS(Nodo(0))
-    # bfs.to_graphviz(path + bfs.id + ".gv")
-    # dfs = g.DFS_R(Nodo(0))
-    # dfs.to_graphviz(path + dfs.id + ".gv")
-    # dfs_i = g.DFS_I(Nodo(0))
-    # dfs_i.to_graphviz(path + dfs_i.id + ".gv")
     g.random_weights()
     dijkstra = g.Dijkstra(5)
     dijkstra.to_graphviz(path + dijkstra.id + ".gv")

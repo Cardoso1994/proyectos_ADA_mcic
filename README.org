@@ -11,6 +11,20 @@
 - Alumno :: Marco Antonio Cardoso Moreno
 
 * Especificaciones
+** Proyecto 03
+Algoritmo de Dijkstra
+Utilizando la biblioteca de grafos desarrollada en el proyecto 1, implementar el algoritmo de Dijkstra de tal forma que dado un nodo fuente (s), calculen el árbol de caminos más cortos; es decir, desarrollar el método en la clase Grafo:
+- =def Dijkstra(self, s)=
+
+** Proyecto 02
+Utilizando la biblioteca de grafos desarrollada en el proyecto 1, implementar
+los algoritmos BFS y DFS (recursivo e iterativo) de tal forma que dado un nodo
+fuente (s), calculen el árbol inducido por los algoritmos mencionados; es decir,
+desarrollar los métodos en la clase Grafo:
+- =def BFS(self, s)=
+- =def DFS_R(self, s)=
+- =def DFS_I(self, s)=
+
 ** Proyecto 01
 Escribir una biblioteca orientada a objetos, en Python 3.6, para describir y
 utilizar grafos. Debe, por lo menos contar con una clase llamada Grafo, una
@@ -23,225 +37,117 @@ funciones para generar grafos con los siguientes modelos de generación:
 - Barabási-Albert
 - Dorogovtsev-Mendes
 
-** Proyecto 02
-Utilizando la biblioteca de grafos desarrollada en el proyecto 1, implementar
-los algoritmos BFS y DFS (recursivo e iterativo) de tal forma que dado un nodo
-fuente (s), calculen el árbol inducido por los algoritmos mencionados; es decir,
-desarrollar los métodos en la clase Grafo:
-- =def BFS(self, s)=
-- =def DFS_R(self, s)=
-- =def DFS_I(self, s)=
-
 * Imágenes - Resultados
 * Malla
-** 30 nodos
-- m :: 6
-- n :: 5
-*** Grafo generado
-[[./img/30/malla/grafoMalla_6_5.png]]
-*** BFS
-[[./img/30/malla/BFS_grafoMalla_6_5.png]]
-*** DFS_R
-[[./img/30/malla/DFS_R_grafoMalla_6_5.png]]
-*** DFS_I
-[[./img/30/malla/DFS_I_grafoMalla_6_5.png]]
-** 100 nodos
+** 80 nodos
 - m :: 10
-- n :: 10
+- n :: 8
 *** Grafo generado
-[[./img/100/malla/grafoMalla_10_10.png]]
-*** BFS
-[[./img/100/malla/BFS_grafoMalla_10_10.png]]
-*** DFS_R
-[[./img/100/malla/DFS_R_grafoMalla_10_10.png]]
-*** DFS_I
-[[./img/100/malla/DFS_I_grafoMalla_10_10.png]]
-
+- [[./gv/80/grafoMalla_10_8.gv][Archivo GV]]
+[[./img/80/grafoMalla_10_8.png]]
+*** Dijkstra
+- [[./gv/80/grafoMalla_10_8_Dijkstra.gv][Archivo GV]]
+[[./img/80/grafoMalla_10_8_Dijkstra.png]]
 ** 500 nodos
 - m :: 25
 - n :: 20
-*** Gafo generado
-[[./img/500/malla/grafoMalla_25_20.png]]
-*** BFS
-[[./img/500/malla/BFS_grafoMalla_25_20.png]]
-*** DFS_R
-[[./img/500/malla/DFS_R_grafoMalla_25_20.png]]
-*** DFS_I
-[[./img/500/malla/DFS_I_grafoMalla_25_20.png]]
-
+*** Grafo generado
+- [[./gv/500/grafoMalla_25_20.gv][Archivo GV]]
+[[./img/500/grafoMalla_25_20.png]]
+*** Grafo generado
+- [[./gv/500/grafoMalla_25_20_Dijkstra.gv][Archivo GV]]
+[[./img/500/grafoMalla_25_20_Dijkstra.png]]
 * Erdos Renyi
-** 30 nodos
-- n :: 30
-- m :: 80
+** 80 nodos
+- n :: 80
+- m :: 250
 *** Grafo generado
-[[./img/30/erdos/grafoErdos_Renyi_30_80.png]]
-*** BFS
-[[./img/30/erdos/BFS_grafoErdos_Renyi_30_80.png]]
-*** DFS_R
-[[./img/30/erdos/DFS_R_grafoErdos_Renyi_30_80.png]]
-*** DFS_I
-[[./img/30/erdos/DFS_I_grafoErdos_Renyi_30_80.png]]
-** 100 nodos
-- n :: 100
-- m :: 280
-*** Grafo generado
-[[./img/100/erdos/grafoErdos_Renyi_100_280.png]]
-*** BFS
-[[./img/100/erdos/BFS_grafoErdos_Renyi_100_280.png]]
-*** DFS_R
-[[./img/100/erdos/DFS_R_grafoErdos_Renyi_100_280.png]]
-*** DFS_I
-[[./img/100/erdos/DFS_I_grafoErdos_Renyi_100_280.png]]
-
+- [[./gv/80/grafoErdos_Renyi_80_250.gv][Archivo GV]]
+[[./img/80/grafoErdos_Renyi_80_250.png]]
+*** Dijkstra
+- [[./gv/80/grafoErdos_Renyi_80_250_Dijkstra.gv][Archivo GV]]
+[[./img/80/grafoErdos_Renyi_80_250_Dijkstra.png]]
 ** 500 nodos
 - n :: 500
 - m :: 2000
 *** Grafo generado
-[[./img/500/erdos/grafoErdos_Renyi_500_2000.png]]
-*** BFS
-[[./img/500/erdos/BFS_grafoErdos_Renyi_500_2000.png]]
-*** DFS_R
-[[./img/500/erdos/DFS_R_grafoErdos_Renyi_500_2000.png]]
-*** DFS_I
-[[./img/500/erdos/DFS_I_grafoErdos_Renyi_500_2000.png]]
-
+- [[./gv/500/grafoErdos_Renyi_500_2000.gv][Archivo GV]]
+[[./img/500/grafoErdos_Renyi_500_2000.png]]
+*** Dijkstra
+- [[./gv/500/grafoErdos_Renyi_500_2000_Dijkstra.gv][Archivo GV]]
+[[./img/500/grafoErdos_Renyi_500_2000_Dijkstra.png]]
 * Gilbert
-** 30 nodos
-- n :: 30
-- p :: 0.1
+** 80 nodos
+- n :: 80
+- p :: 0.4
 *** Grafo generado
-[[./img/30/gilbert/grafoGilbert_30_10.png]]
-*** BFS
-[[./img/30/gilbert/BFS_grafoGilbert_30_10.png]]
-*** DFS_R
-[[./img/30/gilbert/DFS_R_grafoGilbert_30_10.png]]
-*** DFS_I
-
-[[./img/30/gilbert/DFS_I_grafoGilbert_30_10.png]]
-** 100 nodos
-- n :: 100
-- p :: 0.3
-*** Grafo generado
-[[./img/100/gilbert/grafoGilbert_100_30.png]]
-*** BFS
-[[./img/100/gilbert/BFS_grafoGilbert_100_30.png]]
-*** DFS_R
-[[./img/100/gilbert/DFS_R_grafoGilbert_100_30.png]]
-*** DFS_I
-[[./img/100/gilbert/DFS_I_grafoGilbert_100_30.png]]
-
+- [[./gv/80/grafoGilbert_80_40.gv][Archivo GV]]
+[[./img/80/grafoGilbert_80_40.png]]
+*** Dijkstra
+- [[./gv/80/grafoGilbert_80_40_Dijkstra.gv][Archivo GV]]
+[[./img/80/grafoGilbert_80_40_Dijkstra.png]]
 ** 500 nodos
 - n :: 500
 - p :: 0.2
 *** Grafo generado
-[[./img/500/gilbert/grafoGilbert_500_20.png]]
-*** BFS
-[[./img/500/gilbert/BFS_grafoGilbert_500_20.png]]
-*** DFS_R
-[[./img/500/gilbert/DFS_R_grafoGilbert_500_20.png]]
-*** DFS_I
-[[./img/500/gilbert/DFS_I_grafoGilbert_500_20.png]]
+- [[./gv/500/grafoGilbert_500_20.gv][Archivo GV]]
+[[./img/500/grafoGilbert_500_20.png]]
+*** Dijkstra
+- [[./gv/500/grafoGilbert_500_20_Dijkstra.gv][Archivo GV]]
+[[./img/500/grafoGilbert_500_20_Dijkstra.png]]
 * Geográfico
-** 30 nodos
-- n :: 30
-- r :: 0.3
+** 80 nodos
+- n :: 80
+- r :: 0.4
 *** Grafo generado
-[[./img/30/geo/grafoGeografico_30_30.png]]
-*** BFS
-[[./img/30/geo/BFS_grafoGeografico_30_30.png]]
-*** DFS_R
-[[./img/30/geo/DFS_R_grafoGeografico_30_30.png]]
-*** DFS_I
-[[./img/30/geo/DFS_I_grafoGeografico_30_30.png]]
-** 100 nodos
-- n :: 100
-- r :: 0.3
-*** Grafo generado
-[[./img/100/geo/grafoGeografico_100_30.png]]
-*** BFS
-[[./img/100/geo/BFS_grafoGeografico_100_30.png]]
-*** DFS_R
-[[./img/100/geo/DFS_R_grafoGeografico_100_30.png]]
-*** DFS_I
-[[./img/100/geo/DFS_I_grafoGeografico_100_30.png]]
-
+- [[./gv/80/grafoGeografico_80_40.gv][Archivo GV]]
+[[./img/80/grafoGeografico_80_40.png]]
+*** Dijkstra
+- [[./gv/80/grafoGilbert_80_40_Dijkstra.gv][Archivo GV]]
+[[./img/80/grafoGeografico_80_40_Dijkstra.png]]
 ** 500 nodos
 - n :: 500
-- r :: 0.2
+- r :: 0.4
 *** Grafo generado
-[[./img/500/geo/grafoGeografico_500_20.png]]
-*** BFS
-[[./img/500/geo/BFS_grafoGeografico_500_20.png]]
-*** DFS_R
-[[./img/500/geo/DFS_R_grafoGeografico_500_20.png]]
-*** DFS_I
-[[./img/500/geo/DFS_I_grafoGeografico_500_20.png]]
-
+- [[./gv/500/grafoGeografico_500_40.gv][Archivo GV]]
+[[./img/500/grafoGeografico_500_40.png]]
+*** Dijkstra
+- [[./gv/500/grafoGeografico_500_40_Dijkstra.gv][Archivo GV]]
+[[./img/500/grafoGeografico_500_40_Dijkstra.png]]
 * Barabasi
-** 30 nodos
-- n :: 30
-- d :: 4
-*** Grafo generado
-[[./img/30/barabasi/grafoBarabasi_30_4.png]]
-*** BFS
-[[./img/30/barabasi/BFS_grafoBarabasi_30_4.png]]
-*** DFS_R
-[[./img/30/barabasi/DFS_R_grafoBarabasi_30_4.png]]
-*** DFS_I
-[[./img/30/barabasi/DFS_I_grafoBarabasi_30_4.png]]
-** 100 nodos
-- n :: 100
-- d :: 6
-*** Grafo generado
-[[./img/100/barabasi/grafoBarabasi_100_6.png]]
-*** BFS
-[[./img/100/barabasi/BFS_grafoBarabasi_100_6.png]]
-*** DFS_R
-[[./img/100/barabasi/DFS_R_grafoBarabasi_100_6.png]]
-*** DFS_I
-[[./img/100/barabasi/DFS_I_grafoBarabasi_100_6.png]]
-
-** 500 nodos
-- n :: 500
+** 80 nodos
+- n :: 80
 - d :: 7
 *** Grafo generado
-[[./img/500/barabasi/grafoBarabasi_500_7.png]]
-*** BFS
-[[./img/500/barabasi/BFS_grafoBarabasi_500_7.png]]
-*** DFS
-[[./img/500/barabasi/DFS_R_grafoBarabasi_500_7.png]]
-*** DFS
-[[./img/500/barabasi/DFS_I_grafoBarabasi_500_7.png]]
-
+- [[./gv/80/grafoBarabasi_80_7.gv][Archivo GV]]
+[[./img/80/grafoBarabasi_80_7.png]]
+*** Dijkstra
+- [[./gv/80/grafoBarabasi_80_7_Dijkstra.gv][Archivo GV]]
+[[./img/80/grafoBarabasi_80_7_Dijkstra.png]]
+** 500 nodos
+- n :: 500
+- d :: 5
+*** Grafo generado
+- [[./gv/500/grafoBarabasi_500_7.gv][Archivo GV]]
+[[./img/500/grafoBarabasi_500_7.png]]
+*** Dijkstra
+- [[./gv/500/grafoBarabasi_500_7_Dijkstra.gv][Archivo GV]]
+[[./img/500/grafoBarabasi_500_7_Dijkstra.png]]
 * Dorogovtsev
-** 30 nodos
+** 80 nodos
 *** Grafo generado
-[[./img/30/dorog/grafoDorogovtsev_30.png]]
-*** BFS
-[[./img/30/dorog/BFS_grafoDorogovtsev_30.png]]
-*** DFS_R
-[[./img/30/dorog/DFS_R_grafoDorogovtsev_30.png]]
-*** DFS_I
-[[./img/30/dorog/DFS_I_grafoDorogovtsev_30.png]]
-** 100 nodos
-*** Grafo generado
-[[./img/100/dorog/grafoDorogovtsev_100.png]]
-*** BFS
-[[./img/100/dorog/BFS_grafoDorogovtsev_100.png]]
-*** DFS_R
-[[./img/100/dorog/DFS_R_grafoDorogovtsev_100.png]]
-*** DFS_I
-[[./img/100/dorog/DFS_I_grafoDorogovtsev_100.png]]
+- [[./gv/80/grafoDorogovtsev_80.gv][Archivo GV]]
+[[./img/80/grafoDorogovtsev_80.png]]
+*** Dijkstra
+- [[./gv/80/grafoDorogovtsev_80_Dijkstra.gv][Archivo GV]]
+[[./img/80/grafoDorogovtsev_80_Dijkstra.png]]
 ** 500 nodos
 *** Grafo generado
-[[./img/500/dorog/grafoDorogovtsev_500.png]]
-*** BFS
-[[./img/500/dorog/BFS_grafoDorogovtsev_500.png]]
-*** DFS_R
-[[./img/500/dorog/DFS_R_grafoDorogovtsev_500.png]]
-*** DFS_I
-[[./img/500/dorog/DFS_I_grafoDorogovtsev_500.png]]
-
+- [[./gv/500/grafoDorogovtsev_500.gv][Archivo GV]]
+[[./img/500/grafoDorogovtsev_500.png]]
+*** Dijkstra
+- [[./gv/500/grafoDorogovtsev_500_Dijkstra.gv][Archivo GV]]
+[[./img/500/grafoDorogovtsev_500_Dijkstra.png]]
 * Dependencias
 - Lenguaje :: Python
   + Versión :: 3.6.7
