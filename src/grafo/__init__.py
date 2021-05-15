@@ -349,6 +349,10 @@ class Grafo(object):
         in_tree = set()
 
 
+        """
+        asignar valores infinitos a los nodos.
+        asignar nodo padre en el arbol a None
+        """
         line[s] = 0
         parents[s] = None
         for node in self.V:
@@ -377,6 +381,7 @@ class Grafo(object):
                     if v not in in_tree:
                         neigh.append(v)
 
+            # actualizar distancias de ser necesario
             for v in neigh:
                 arista = (u, v) if (u, v) in self.E else (v, u)
                 if line[v] > u_dist + self.E[arista].attrs['weight']:
