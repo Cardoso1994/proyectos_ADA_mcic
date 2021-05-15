@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-################################################################################
+###############################################################################
 #
 # Desarrollador: Marco Antonio Cardoso Moreno
 #
-# Main. Generador de Grafos y árboles DFS y BFS. Proyecto 02 ADA
+# Main. Generador de Grafos y árboles de Dijkstra. Proyecto 03 ADA
 #
 # Abril 2021
 #
-################################################################################
+###############################################################################
 
 import random
 from time import perf_counter
