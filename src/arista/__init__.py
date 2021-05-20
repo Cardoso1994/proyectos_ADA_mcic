@@ -67,5 +67,9 @@ class Arista(object):
         """
         return repr(self.id)
 
+    def __iter__(self):
+       ''' Returns the Iterator object '''
+       return Arista(self.u, self.v)
+
     def add_weight(self, weight):
         self.attrs['weight'] = weight
