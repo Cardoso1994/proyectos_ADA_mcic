@@ -389,3 +389,49 @@ class Grafo(object):
                     parents[v] = u
 
         return tree
+
+    def KruskalD(self):
+        """
+        Crea un nuevo grafo de tipo árbol mediante el algoritmo de Kruskal
+        directo, que encuentra el árbol de expansión mínima
+
+        Returns
+        -------
+        mst : Grafo
+            árbol de expansión mínima (mst)
+        """
+
+        mst = Grafo(id=f"{self.id}_KruskalD")
+
+        # sort edges by weight
+        edges_sorted = list(self.E.values())
+        edges_sorted.sort(key = lambda edge: edge.attrs['weight'])
+
+        # connected component
+        connected_comp = dict()
+        for nodo in self.V:
+            connected_comp[nodo] = nodo
+
+        # add edges, iterating by weight
+        for edge in edges_sorted:
+            u, v = edge.u, edge.v
+            if connected_comp[u.id] != connected_comp[v.id]:
+                # add nodes and edge to mst
+                mst.add_nodo(u)
+                mst.add_nodo(v)
+                mst.add_arista(edge)
+
+                # change the connected component of v to be the same as u
+                for comp in connected_comp:
+                    if connected_comp[comp] == connected_comp[v.id]:
+                        other_comp = connected_comp[v.id]
+                        connected_comp[comp] = connected_comp[u.id]
+
+                        # if we change the connected comp of one node,
+                        # change it for the whole connected comp
+                        iterator = (key for key in connected_comp \
+                                    if connected_comp[key] == other_comp)
+                        for item in iterator:
+                            connected_comp[item] = connected_comp[u.id]
+
+        return mst
