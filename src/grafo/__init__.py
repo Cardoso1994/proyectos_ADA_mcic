@@ -9,7 +9,7 @@
 #
 ################################################################################
 
-
+import copy
 import random
 import sys
 
@@ -54,6 +54,21 @@ class Grafo(object):
         self.E =        dict()
         self.attr =     dict()
 
+    def copy_grafo(self, id=f"copy", dirigido=False):
+        """
+        Regresa una copia deep del grafo
+
+        Returns
+        -------
+        other : Grafo
+            deep copy de self
+        """
+        other = Grafo(id, dirigido)
+        other.V = copy.deepcopy(self.V)
+        other.E = copy.deepcopy(self.E)
+        other.attr = copy.deepcopy(self.attr)
+
+        return other
 
     def __repr__(self):
         """
@@ -433,5 +448,33 @@ class Grafo(object):
                                     if connected_comp[key] == other_comp)
                         for item in iterator:
                             connected_comp[item] = connected_comp[u.id]
+
+        return mst
+
+
+    def KruskalI(self):
+        """
+        Crea un nuevo grafo de tipo árbol mediante el algoritmo de Kruskal
+        inverso, que encuentra el árbol de expansión mínima
+
+        Returns
+        -------
+        mst : Grafo
+            árbol de expansión mínima (mst)
+        """
+        mst = self.copy_grafo(id=f"{self.id}_KruskalI", dirigido=self.dirigido)
+
+        # sort edges by weight
+        edges_sorted = list(self.E.values())
+        edges_sorted.sort(key = lambda edge: edge.attrs['weight'], reverse=True)
+
+        # start removing edges from mst
+        for edge in edges_sorted:
+            u, v = edge.u.id, edge.v.id
+            key, value = (u, v), edge
+            del(mst.E[(u, v)])
+            # if graph not connected after removal, put back the edge again
+            if len(mst.BFS(edge.u).V) != len(mst.V):
+                mst.E[(u, v)] = edge
 
         return mst
