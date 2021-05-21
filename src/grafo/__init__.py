@@ -150,6 +150,20 @@ class Grafo(object):
         for arista in self.E.values():
             arista.attrs['weight'] = random.randint(1, 100)
 
+    def costo(self):
+        """
+        Calcula el costo del grafo. Suma del peso de las aristas
+
+        Returns
+        -------
+        costo : float
+            suma del peso de las aristas del grafo
+        """
+        _costo = 0
+        for edge in self.E.values():
+            _costo += edge.attrs['weight']
+
+        return _costo
 
     def to_graphviz(self, filename):
         """
@@ -476,5 +490,69 @@ class Grafo(object):
             # if graph not connected after removal, put back the edge again
             if len(mst.BFS(edge.u).V) != len(mst.V):
                 mst.E[(u, v)] = edge
+
+        return mst
+
+
+    def Prim(self):
+        """
+        Crea un nuevo grafo de tipo árbol mediante el algoritmo de Prim,
+        que encuentra el árbol de expansión mínima
+
+        Returns
+        -------
+        mst : Grafo
+            árbol de expansión mínima (mst)
+        """
+        mst = Grafo(id=f"{self.id}_Prim")
+        line = heapdict.heapdict()
+        parents = dict()
+        in_tree = set()
+
+        s = random.choice(list(self.V.values()))
+
+        """
+        asignar valores infinitos a los nodos.
+        asignar nodo padre en el arbol a None
+        """
+        line[s.id] = 0
+        parents[s.id] = None
+        for node in self.V:
+            if node == s.id:
+                continue
+            line[node] = np.inf
+            parents[node] = None
+
+        while line:
+            u, u_dist = line.popitem()
+            if u_dist == np.inf:
+                continue
+
+            self.V[u].attrs['dist'] = u_dist
+            mst.add_nodo(self.V[u])
+            if parents[u] is not None:
+                arista = Arista(self.V[parents[u]], self.V[u])
+                if (u, parents[u]) in self.E:
+                    weight = self.E[(u, parents[u])].attrs['weight']
+                else:
+                    weight = self.E[(parents[u], u)].attrs['weight']
+                arista.attrs['weight'] = weight
+                mst.add_arista(arista)
+            in_tree.add(u)
+
+            # get neighbor nodes
+            neigh = []
+            for arista in self.E:
+                if self.V[u].id in arista:
+                    v = arista[0] if self.V[u].id == arista[1] else arista[1]
+                    if v not in in_tree:
+                        neigh.append(v)
+
+            # actualizar distancias de ser necesario
+            for v in neigh:
+                arista = (u, v) if (u, v) in self.E else (v, u)
+                if line[v] > self.E[arista].attrs['weight']:
+                    line[v] = self.E[arista].attrs['weight']
+                    parents[v] = u
 
         return mst
