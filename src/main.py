@@ -27,88 +27,37 @@ from visualizador_grafos.eades import spring
 def main():
     path = "/home/cardoso/garbage/grafos/200/"
 
-    nodos = 200
-    nodos_malla = (25, 20)
+    nodos = 500
+    nodos_malla = (20, 25)
 
-    m_erdos = 1020
-    p_gilbert = 0.15
-    r_geografico = 0.3
-    d_barabasi = 5
+    m_erdos = 3500
+    p_gilbert = 0.05
+    r_geografico = 0.15
+    d_barabasi = 4
 
-    print("\nMalla")
-    g = grafoMalla(*nodos_malla)
-    spring(g)
-    exit()
+    # print("\nMalla")
+    # g = grafoMalla(*nodos_malla)
+    # spring(g)
 
-    print("\nErdos")
-    g = grafoErdosRenyi(nodos, m_erdos)
-    g.to_graphviz(path + g.id + ".gv")
-    g.random_weights()
-    kruskal = g.KruskalD()
-    kruskal.to_graphviz(path + kruskal.id + ".gv")
-    kruskalI = g.KruskalI()
-    kruskalI.to_graphviz(path + kruskalI.id + ".gv")
-    prim = g.Prim()
-    prim.to_graphviz(path + prim.id + ".gv")
-    print(f"costo kruskal: {kruskal.costo()}")
-    print(f"costo kruskalI: {kruskalI.costo()}")
-    print(f"costo prim: {prim.costo()}")
+    # print("\nErdos")
+    # g = grafoErdosRenyi(nodos, m_erdos)
+    # spring(g)
 
-    print("\nGilbert")
-    g = grafoGilbert(nodos, p_gilbert, dirigido=False, auto=False)
-    g.to_graphviz(path + g.id + ".gv")
-    g.random_weights()
-    kruskal = g.KruskalD()
-    kruskal.to_graphviz(path + kruskal.id + ".gv")
-    kruskalI = g.KruskalI()
-    kruskalI.to_graphviz(path + kruskalI.id + ".gv")
-    prim = g.Prim()
-    prim.to_graphviz(path + prim.id + ".gv")
-    print(f"costo kruskal: {kruskal.costo()}")
-    print(f"costo kruskalI: {kruskalI.costo()}")
-    print(f"costo prim: {prim.costo()}")
+    # print("\nGilbert")
+    # g = grafoGilbert(nodos, p_gilbert, dirigido=False, auto=False)
+    # spring(g)
 
-    print("\nGeo")
-    g = grafoGeografico(nodos, r_geografico)
-    g.to_graphviz(path + g.id + ".gv")
-    g.random_weights()
-    kruskal = g.KruskalD()
-    kruskal.to_graphviz(path + kruskal.id + ".gv")
-    kruskalI = g.KruskalI()
-    kruskalI.to_graphviz(path + kruskalI.id + ".gv")
-    prim = g.Prim()
-    prim.to_graphviz(path + prim.id + ".gv")
-    print(f"costo kruskal: {kruskal.costo()}")
-    print(f"costo kruskalI: {kruskalI.costo()}")
-    print(f"costo prim: {prim.costo()}")
+    # print("\nGeo")
+    # g = grafoGeografico(nodos, r_geografico)
+    # spring(g)
 
-    print("\nBarabasi")
-    g = grafoBarabasiAlbert(nodos, d_barabasi, auto=False)
-    g.to_graphviz(path + g.id + ".gv")
-    g.random_weights()
-    kruskal = g.KruskalD()
-    kruskal.to_graphviz(path + kruskal.id + ".gv")
-    kruskalI = g.KruskalI()
-    kruskalI.to_graphviz(path + kruskalI.id + ".gv")
-    prim = g.Prim()
-    prim.to_graphviz(path + prim.id + ".gv")
-    print(f"costo kruskal: {kruskal.costo()}")
-    print(f"costo kruskalI: {kruskalI.costo()}")
-    print(f"costo prim: {prim.costo()}")
+    # print("\nBarabasi")
+    # g = grafoBarabasiAlbert(nodos, d_barabasi, auto=False)
+    # spring(g)
 
     print("\nDorog")
     g = grafoDorogovtsevMendes(nodos, dirigido=False)
-    g.to_graphviz(path + g.id + ".gv")
-    g.random_weights()
-    kruskal = g.KruskalD()
-    kruskal.to_graphviz(path + kruskal.id + ".gv")
-    kruskalI = g.KruskalI()
-    kruskalI.to_graphviz(path + kruskalI.id + ".gv")
-    prim = g.Prim()
-    prim.to_graphviz(path + prim.id + ".gv")
-    print(f"costo kruskal: {kruskal.costo()}")
-    print(f"costo kruskalI: {kruskalI.costo()}")
-    print(f"costo prim: {prim.costo()}")
+    spring(g)
 
 if __name__ == "__main__":
     main()
