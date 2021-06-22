@@ -103,6 +103,7 @@ class Grafo(object):
     def add_arista(self, arista):
         """
         Agrega arista al grafo si esta no existe de antemano en dicho grafo.
+        Agrega el otro nodo de la arista al parametro connected_to de cada nodo
 
         Parametros
         ----------
@@ -119,6 +120,11 @@ class Grafo(object):
             return False
 
         self.E[arista.id] = arista
+
+        u, v = arista.u.id, arista.v.id
+        self.V[u].connected_to.append(v)
+        self.V[v].connected_to.append(u)
+
         return True
 
 

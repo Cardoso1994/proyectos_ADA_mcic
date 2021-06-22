@@ -27,6 +27,7 @@ class Nodo(object):
     def __init__(self, id):
         self.id = id
         self.attrs = dict()
+        self.connected_to = []
 
     def __eq__(self, other):
         """
