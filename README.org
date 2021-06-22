@@ -12,6 +12,10 @@
 
 * Especificaciones
 ** Proyecto 05 - Algoritmos de árbol de expansión mínima
+Dado un grafo, y utilizando pygame, generar una visualización del mismo.
+Mediante el método:
++ Spring: calcula la disposición de un grafo mediante el algoritmo de resortes
+  presentado por P. Eades (1984). =O(m+n)=
 
 ** Proyecto 04 - Algoritmos de árbol de expansión mínima
 Utilizando la biblioteca de grafos desarrollada en el proyecto 1, implementar
@@ -108,7 +112,7 @@ funciones para generar grafos con los siguientes modelos de generación:
 ** 500 nodos
 + n :: 500
 + d :: 4
-+ [][Video en YT]]
++ [[https://youtu.be/MnP6HzQvFMs][Video en YT]]
 [[./img/500/grafo_barabasi.png]]
 
 * Dorogovtsev
@@ -117,7 +121,7 @@ funciones para generar grafos con los siguientes modelos de generación:
 [[./img/100/grafo_dorog.png]]
 
 ** 500 nodos
-+ [https://youtu.be/BJGTYutK2ZM][Video en YT]]
++ [[https://youtu.be/rUU0pBIYVL8][Video en YT]]
 [[./img/500/grafo_dorog.png]]
 
 * Dependencias
