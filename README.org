@@ -11,6 +11,8 @@
 - Alumno :: Marco Antonio Cardoso Moreno
 
 * Especificaciones
+** Proyecto 05 - Algoritmos de árbol de expansión mínima
+
 ** Proyecto 04 - Algoritmos de árbol de expansión mínima
 Utilizando la biblioteca de grafos desarrollada en el proyecto 1, implementar
 los algoritmos de Kruskal (directo e inverso) y Prim de tal forma que calculen
@@ -48,211 +50,76 @@ funciones para generar grafos con los siguientes modelos de generación:
 
 * Imágenes - Resultados
 * Malla
-** 50 nodos
-- m :: 5
-- n :: 10
-*** Costos de árboles de expansión mínima
-[[./img/50/malla_costo.png]]
-*** Grafo generado
-- [[./gv/50/grafoMalla_5_10.gv][Archivo GV]]
-[[./img/50/grafoMalla_5_10.png]]
-*** KruskalD
-- [[./gv/50/grafoMalla_5_10_KruskalD.gv][Archivo GV]]
-[[./img/50/grafoMalla_5_10_KruskalD.png]]
-*** KruskalI
-- [[./gv/50/grafoMalla_5_10_KruskalI.gv][Archivo GV]]
-[[./img/50/grafoMalla_5_10_KruskalI.png]]
-*** Prim
-- [[./gv/50/grafoMalla_5_10_Prim.gv][Archivo GV]]
-[[./img/50/grafoMalla_5_10_Prim.png]]
-** 200 nodos
-- m :: 20
-- n :: 10
-*** Costos de árboles de expansión mínima
-[[./img/200/malla_costo.png]]
-*** Grafo generado
-- [[./gv/200/grafoMalla_20_10.gv][Archivo GV]]
-[[./img/200/grafoMalla_20_10.png]]
-*** KruskalD
-- [[./gv/200/grafoMalla_20_10_KruskalD.gv][Archivo GV]]
-[[./img/200/grafoMalla_20_10_KruskalD.png]]
-*** KruskalI
-- [[./gv/200/grafoMalla_20_10_KruskalI.gv][Archivo GV]]
-[[./img/200/grafoMalla_20_10_KruskalI.png]]
-*** Prim
-- [[./gv/200/grafoMalla_20_10_Prim.gv][Archivo GV]]
-[[./img/200/grafoMalla_20_10_Prim.png]]
+** 100 nodos
++ m :: 10
++ n :: 10
++ [[https://youtu.be/zisJhrQYE_U][Video en YT]]
+[[./img/100/grafo_malla.png]]
+** 500 nodos
++ m :: 20
++ n :: 25
++ [[https://youtu.be/9FFDIV_eud0][Video en YT]]
+[[./img/500/grafo_malla.png]]
+
 * Erdos Renyi
-** 50 nodos
-- n :: 50
-- m :: 520
-*** Costos de árboles de expansión mínima
-[[./img/50/erdos_costo.png]]
-*** Grafo generado
-- [[./gv/50/grafoErdos_Renyi_50_520.gv][Archivo GV]]
-[[./img/50/grafoErdos_Renyi_50_520.png]]
-*** KruskalD
-- [[./gv/50/grafoErdos_Renyi_50_520_KruskalD.gv][Archivo GV]]
-[[./img/50/grafoErdos_Renyi_50_520_KruskalD.png]]
-*** KruskalI
-- [[./gv/50/grafoErdos_Renyi_50_520_KruskalI.gv][Archivo GV]]
-[[./img/50/grafoErdos_Renyi_50_520_KruskalI.png]]
-*** Prim
-- [[./gv/50/grafoErdos_Renyi_50_520_Prim.gv][Archivo GV]]
-[[./img/50/grafoErdos_Renyi_50_520_Prim.png]]
-** 200 nodos
-- n :: 200
-- m :: 1020
-*** Costos de árboles de expansión mínima
-[[./img/200/erdos_costo.png]]
-*** Grafo generado
-- [[./gv/200/grafoErdos_Renyi_200_1020.gv][Archivo GV]]
-[[./img/200/grafoErdos_Renyi_200_1020.png]]
-*** KruskalD
-- [[./gv/200/grafoErdos_Renyi_200_1020_KruskalD.gv][Archivo GV]]
-[[./img/200/grafoErdos_Renyi_200_1020_KruskalD.png]]
-*** KruskalI
-- [[./gv/200/grafoErdos_Renyi_200_1020_KruskalI.gv][Archivo GV]]
-[[./img/200/grafoErdos_Renyi_200_1020_KruskalI.png]]
-*** Prim
-- [[./gv/200/grafoErdos_Renyi_200_1020_Prim.gv][Archivo GV]]
-[[./img/200/grafoErdos_Renyi_200_1020_Prim.png]]
+** 100 nodos
++ n :: 100
++ m :: 1020
++ [[https://youtu.be/uYVE8m2L-Qo][Video en YT]]
+[[./img/100/grafo_erdos.png]]
+** 500 nodos
++ n :: 500
++ m :: 3500
++ [[https://youtu.be/siPaYLMaeCQ][Video en YT]]
+[[./img/500/grafo_erdos.png]]
+
 * Gilbert
-** 50 nodos
-- n :: 50
-- p :: 0.3
-*** Costos de árboles de expansión mínima
-[[./img/50/gilbert_costo.png]]
-*** Grafo generado
-- [[./gv/50/grafoGilbert_50_30.gv][Archivo GV]]
-[[./img/50/grafoGilbert_50_30.png]]
-*** KruskalD
-- [[./gv/50/grafoGilbert_50_30_KruskalD.gv][Archivo GV]]
-[[./img/50/grafoGilbert_50_30_KruskalD.png]]
-*** KruskalI
-- [[./gv/50/grafoGilbert_50_30_KruskalI.gv][Archivo GV]]
-[[./img/50/grafoGilbert_50_30_KruskalI.png]]
-*** Prim
-- [[./gv/50/grafoGilbert_50_30_Prim.gv][Archivo GV]]
-[[./img/50/grafoGilbert_50_30_Prim.png]]
-** 200 nodos
-- n :: 200
-- p :: 0.15
-*** Costos de árboles de expansión mínima
-[[./img/200/gilbert_costo.png]]
-*** Grafo generado
-- [[./gv/200/grafoGilbert_200_15.gv][Archivo GV]]
-[[./img/200/grafoGilbert_200_15.png]]
-*** KruskalD
-- [[./gv/200/grafoGilbert_200_15_KruskalD.gv][Archivo GV]]
-[[./img/200/grafoGilbert_200_15_KruskalD.png]]
-*** KruskalI
-- [[./gv/200/grafoGilbert_200_15_KruskalI.gv][Archivo GV]]
-[[./img/200/grafoGilbert_200_15_KruskalI.png]]
-*** Prim
-- [[./gv/200/grafoGilbert_200_15_Prim.gv][Archivo GV]]
-[[./img/200/grafoGilbert_200_15_Prim.png]]
+** 100 nodos
++ n :: 100
++ p :: 0.15
++ [[https://youtu.be/eDnaWLL7oDg][Video en YT]]
+[[./img/100/grafo_gilbert.png]]
+
+** 500 nodos
++ n :: 500
++ p :: 0.05
++ [[https://youtu.be/4FBydKvxTOg][Video en YT]]
+[[./img/500/grafo_gilbert.png]]
 * Geográfico
-** 50 nodos
-- n :: 50
-- r :: 0.3
-*** Costos de árboles de expansión mínima
-[[./img/50/geo_costo.png]]
-*** Grafo generado
-- [[./gv/50/grafoGeografico_50_30.gv][Archivo GV]]
-[[./img/50/grafoGeografico_50_30.png]]
-*** KruskalD
-- [[./gv/50/grafoGeografico_50_30_KruskalD.gv][Archivo GV]]
-[[./img/50/grafoGeografico_50_30_KruskalD.png]]
-*** KruskalI
-- [[./gv/50/grafoGeografico_50_30_KruskalI.gv][Archivo GV]]
-[[./img/50/grafoGeografico_50_30_KruskalI.png]]
-*** Prim
-- [[./gv/50/grafoGeografico_50_30_Prim.gv][Archivo GV]]
-[[./img/50/grafoGeografico_50_30_Prim.png]]
-** 200 nodos
-- n :: 200
-- r :: 0.3
-*** Costos de árboles de expansión mínima
-[[./img/200/geo_costo.png]]
-*** Grafo generado
-- [[./gv/200/grafoGeografico_200_30.gv][Archivo GV]]
-[[./img/200/grafoGeografico_200_30.png]]
-*** KruskalD
-- [[./gv/200/grafoGeografico_200_30_KruskalD.gv][Archivo GV]]
-[[./img/200/grafoGeografico_200_30_KruskalD.png]]
-*** KruskalI
-- [[./gv/200/grafoGeografico_200_30_KruskalI.gv][Archivo GV]]
-[[./img/200/grafoGeografico_200_30_KruskalI.png]]
-*** Prim
-- [[./gv/200/grafoGeografico_200_30_Prim.gv][Archivo GV]]
-[[./img/200/grafoGeografico_200_30_Prim.png]]
+** 100 nodos
++ n :: 100
++ r :: 0.3
++ [[https://youtu.be/LJpnkUewdxU][Video en YT]]
+[[./img/100/grafo_geo.png]]
+
+** 500 nodos
++ n :: 500
++ r :: 0.15
++ [[https://youtu.be/0jM7uBdxz8E][Video en YT]]
+[[./img/500/grafo_geo.png]]
+
 * Barabasi
-** 50 nodos
-- n :: 50
-- d :: 5
-*** Costos de árboles de expansión mínima
-[[./img/50/barabasi_costo.png]]
-*** Grafo generado
-- [[./gv/50/grafoBarabasi_50_5.gv][Archivo GV]]
-[[./img/50/grafoBarabasi_50_5.png]]
-*** KruskalD
-- [[./gv/50/grafoBarabasi_50_5_KruskalD.gv][Archivo GV]]
-[[./img/50/grafoBarabasi_50_5_KruskalD.png]]
-*** KruskalI
-- [[./gv/50/grafoBarabasi_50_5_KruskalI.gv][Archivo GV]]
-[[./img/50/grafoBarabasi_50_5_KruskalI.png]]
-*** Prim
-- [[./gv/50/grafoBarabasi_50_5_Prim.gv][Archivo GV]]
-[[./img/50/grafoBarabasi_50_5_Prim.png]]
-** 200 nodos
-- n :: 200
-- d :: 5
-*** Costos de árboles de expansión mínima
-[[./img/200/barabasi_costo.png]]
-*** Grafo generado
-- [[./gv/200/grafoBarabasi_200_5.gv][Archivo GV]]
-[[./img/200/grafoBarabasi_200_5.png]]
-*** KruskalD
-- [[./gv/200/grafoBarabasi_200_5_KruskalD.gv][Archivo GV]]
-[[./img/200/grafoBarabasi_200_5_KruskalD.png]]
-*** KruskalI
-- [[./gv/200/grafoBarabasi_200_5_KruskalI.gv][Archivo GV]]
-[[./img/200/grafoBarabasi_200_5_KruskalI.png]]
-*** Prim
-- [[./gv/200/grafoBarabasi_200_5_Prim.gv][Archivo GV]]
-[[./img/200/grafoBarabasi_200_5_Prim.png]]
+** 100 nodos
++ n :: 100
++ d :: 5
++ [[https://youtu.be/wx9Nymuo7Ok][Video en YT]]
+[[./img/100/grafo_barabasi.png]]
+
+** 500 nodos
++ n :: 500
++ d :: 4
++ [][Video en YT]]
+[[./img/500/grafo_barabasi.png]]
+
 * Dorogovtsev
-** 50 nodos
-*** Costos de árboles de expansión mínima
-[[./img/50/dorog_costo.png]]
-*** Grafo generado
-- [[./gv/50/grafoDorogovtsev_50.gv][Archivo GV]]
-[[./img/50/grafoDorogovtsev_50.png]]
-*** KruskalD
-- [[./gv/50/grafoDorogovtsev_50_KruskalD.gv][Archivo GV]]
-[[./img/50/grafoDorogovtsev_50_KruskalD.png]]
-*** KruskalI
-- [[./gv/50/grafoDorogovtsev_50_KruskalI.gv][Archivo GV]]
-[[./img/50/grafoDorogovtsev_50_KruskalI.png]]
-*** Prim
-- [[./gv/50/grafoDorogovtsev_50_Prim.gv][Archivo GV]]
-[[./img/50/grafoDorogovtsev_50_Prim.png]]
-** 200 nodos
-*** Costos de árboles de expansión mínima
-[[./img/200/dorog_costo.png]]
-*** Grafo generado
-- [[./gv/200/grafoDorogovtsev_200.gv][Archivo GV]]
-[[./img/200/grafoDorogovtsev_200.png]]
-*** KruskalD
-- [[./gv/200/grafoDorogovtsev_200_KruskalD.gv][Archivo GV]]
-[[./img/200/grafoDorogovtsev_200_KruskalD.png]]
-*** KruskalI
-- [[./gv/200/grafoDorogovtsev_200_KruskalI.gv][Archivo GV]]
-[[./img/200/grafoDorogovtsev_200_KruskalI.png]]
-*** Prim
-- [[./gv/200/grafoDorogovtsev_200_Prim.gv][Archivo GV]]
-[[./img/200/grafoDorogovtsev_200_Prim.png]]
+** 100 nodos
++ [[https://youtu.be/BJGTYutK2ZM][Video en YT]]
+[[./img/100/grafo_dorog.png]]
+
+** 500 nodos
++ [https://youtu.be/BJGTYutK2ZM][Video en YT]]
+[[./img/500/grafo_dorog.png]]
+
 * Dependencias
 - Lenguaje :: Python
   + Versión :: 3.6.7
