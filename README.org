@@ -11,7 +11,12 @@
 - Alumno :: Marco Antonio Cardoso Moreno
 
 * Especificaciones
-** Proyecto 05 - Algoritmos de árbol de expansión mínima
+** Proyecto 06 - Disposición de Grafos - Parte II
+Dado un grafo, y utilizando pygame, generar una visualización del mismo.
++ Force-directed: calcula la disposición de un grafo mediante el algoritmo de equilibrio de fuerzas de Fruchterman y Reigold (1991). O(n^2)
++ Mediante force-directed: utilizando la optimización de Barnes y Hut (1986). O(n log(n))
+
+** Proyecto 05 - Disposición de Grafos
 Dado un grafo, y utilizando pygame, generar una visualización del mismo.
 Mediante el método:
 + Spring: calcula la disposición de un grafo mediante el algoritmo de resortes
