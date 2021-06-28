@@ -3,7 +3,7 @@
 #
 # Desarrollador: Marco Antonio Cardoso Moreno
 #
-# Visualizador de grafos por el método Spring de Eades (1984)
+# Visualizador de grafos por el método Spring de Eades (1984)FruchtermanReginold
 #
 # Abril 2021
 #
@@ -18,7 +18,7 @@ from grafo import Grafo
 from nodo import Nodo
 
 # create the main surface (or window)
-WIDTH, HEIGHT   = 1700, 1000
+WIDTH, HEIGHT   = 1000, 700
 BORDER          = 15
 WIN             = pygame.display.set_mode((WIDTH, HEIGHT))
 
@@ -50,17 +50,14 @@ c2 = 0.7
 c3 = 4.8
 c4 = 0.1
 
-
-def spring(g):
+def fruchterman_reginold(g):
     """
-    Muestra una animación del metodo de visualizacion spring de Eades.
-
+    Muestra una animación del metodo de visualizacion de Furchterman y Reginold
     Parametros
     ----------
     g : Grafo
         grafo para el cual se realiza la visualizacion
     """
-
     run = True
     clock = pygame.time.Clock()
 
@@ -68,22 +65,17 @@ def spring(g):
     draw_edges(g)
     draw_nodes(g)
 
-
-    i = 0
     while run:
         clock.tick(FPS)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
-        if i > ITERS:
-            continue
 
         WIN.fill(BG)
         update_nodes(g)
         draw_edges(g)
         draw_nodes(g)
         pygame.display.update()
-        i += 1
 
     pygame.quit()
     return
@@ -106,57 +98,45 @@ def init_nodes(g):
 
     return
 
+
 def update_nodes(g):
-    """
-    Aplica la fuerza a los nodos del grafo G para actualizar su poisicion
-
-    Parametros
-    ----------
-    g : Grafo
-        grafo para el cual se realiza la visualizacion
-    """
-
+    C = 1
+    temp = 1
+    area = (WIDTH - NODE_MIN_WIDTH) * (HEIGHT - NODE_MIN_HEIGHT)
+    k = C * (area / len(g.V)) ** 0.5
     for node in g.V.values():
-        x_attraction = 0
-        y_attraction = 0
-        x_node, y_node = node.attrs['coords']
-
-        for other in node.connected_to:
-            x_other, y_other = g.V[other].attrs['coords']
-            d = ((x_node - x_other) ** 2 + (y_node - y_other)**2) ** 0.5
-
-            # defining minimum distance
-            if d < DIST_MIN:
+        fx=0
+        fy=0
+        for other in g.V.values():
+            if node == other:
                 continue
-            attraction = c1 * log(d / c2)
-            angle = atan2(y_other - y_node, x_other - x_node)
-            x_attraction += attraction * cos(angle)
-            y_attraction += attraction * sin(angle)
 
-        not_connected = (other for other in g.V.values()
-                         if (other.id not in node.connected_to and other != node))
-        x_repulsion = 0
-        y_repulsion = 0
-        for other in not_connected:
-            x_other, y_other = other.attrs['coords']
-            d = ((x_node - x_other) ** 2 + (y_node - y_other)**2) ** 0.5
-            if d == 0:
+            d=((other.attrs['coords'][0] - node.attrs['coords'][0]) ** 2 +
+               (other.attrs['coords'][1] - node.attrs['coords'][1])**2) ** 0.5
+            if d==0:
                 continue
-            repulsion = c3 / d ** 0.5
-            angle = atan2(y_other - y_node, x_other - x_node)
-            x_repulsion -= repulsion * cos(angle)
-            y_repulsion -= repulsion * sin(angle)
 
-        fx = x_attraction + x_repulsion
-        fy = y_attraction + y_repulsion
-        node.attrs['coords'][0] += c4 * fx
-        node.attrs['coords'][1] += c4 * fy
+            force= (d / abs(d)) * k**2 / d
+            angle = atan2(other.attrs['coords'][1] - node.attrs['coords'][1], other.attrs['coords'][0] - node.attrs['coords'][0])
+            fx-= force * cos(angle)
+            fy-= force * sin(angle)
 
-        # Restrict for limits of window
-        node.attrs['coords'][0] = max(node.attrs['coords'][0], NODE_MIN_WIDTH)
-        node.attrs['coords'][1] = max(node.attrs['coords'][1], NODE_MIN_HEIGHT)
-        node.attrs['coords'][0] = min(node.attrs['coords'][0], NODE_MAX_WIDTH)
-        node.attrs['coords'][1] = min(node.attrs['coords'][1], NODE_MAX_HEIGHT)
+            if other.id in node.connected_to:
+                #Attraction force - Adjacent nodes
+                d = ((other.attrs['coords'][0] - node.attrs['coords'][0]) ** 2
+                    + (other.attrs['coords'][1] - other.attrs['coords'][1]) ** 2) ** 0.5
+
+                if d < DIST_MIN: #30
+                    continue
+
+                force = d / abs(d) * d**2 / k
+                angle = atan2(other.attrs['coords'][1] - node.attrs['coords'][1],
+                              other.attrs['coords'][0] - node.attrs['coords'][0])
+                fx+= force * cos(angle)
+                fy+= force * sin(angle)
+
+        node.attrs['coords'][0] += c4*fx
+        node.attrs['coords'][1] += c4*fy
 
     return
 
